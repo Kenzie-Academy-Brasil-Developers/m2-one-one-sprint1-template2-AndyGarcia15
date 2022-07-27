@@ -24,3 +24,32 @@ const timeDeInstrutores = [
     imagem: "https://ca.slack-edge.com/TQZR39SET-U02DRK9NK0T-fe2c1f2e941c-512",
   },
 ];
+
+
+const liPredefinida = document.querySelector('li')
+
+liPredefinida.remove();
+
+const ul = document.querySelector('ul')
+
+function instrutores(arr, endereco){
+
+  for(let i = 0; i < arr.length;i++){
+    if(arr[i].nome == 'Victor' || arr[i].numeroAlunos > 450){
+      
+      let li = document.createElement('li')
+      let p = document.createElement('p')
+      let img = document.createElement('img')
+
+      li.className = 'card--instrutor'
+      p.textContent = `eu me chamo ${arr[i].nome} e serei seu instrutor no módulo ${modulo}`
+      img.src = arr[i].imagem
+
+      li.appendChild(p)
+      li.appendChild(img)
+      endereco.appendChild(li)
+    }
+  }
+}
+
+instrutores(timeDeInstrutores,ul)
